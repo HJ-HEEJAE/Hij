@@ -1,0 +1,273 @@
+.App {
+  text-align: center;
+  background: #81f5ca;
+  height: 100%;
+}
+
+.App-logo {
+  height: 200px;
+  pointer-events: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  } 
+}*/
+
+.App-header {
+  height: 400px;
+  /* background-color: #81f5ca; */
+}
+main{
+  min-height: 1300px;
+  /* background-color: #81f5ca; */
+}
+.form_container{
+  width: 900px;
+}
+main .dashboard{
+  height: 1300px;
+}
+.WelcomeMsg{
+  margin: 50px;
+}
+.WelcomeMsg p{
+  text-align: left;
+}
+/* main .container::before{
+  width: 1200px;
+  content: "|";
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+.App-link {
+  color: #61dafb;
+}
+.FormBtn{
+  width: 80px;
+  height: 45px;
+  margin-top: 20px;
+  background: rgb(2, 81, 117);
+  border: 3px solid rgb(2, 81, 117);
+  color: white;
+  border-radius: 5px;
+}
+.InputForm{
+  margin: 50px;
+}
+.InputForm .FormLabel div input{
+  width: 350px;
+  height: 35px;
+  /* margin: 10px; */
+}
+.FormLabel p{
+  text-align: left;
+  margin-left: 10px;
+}
+
+nav {
+  /* display: inline-block; */
+  margin: 0 auto;
+  height: 80px;
+  /* width: 1200px; */
+}
+.MenuBar{
+  line-height: 60px;
+  margin-top: 50px;
+  background: #59cafd;
+  border-radius: 10px;
+}
+nav .HomeBox{
+  display: inline-block;
+  width: 20%;
+  /* height: 80px; */
+  /* line-height: 30px; */
+  text-align: left;
+  padding-left: 5px;
+}
+nav .LogBox{
+  display: inline-block;
+  width: 80%;
+  /* height: 80px; */
+  /* line-height: 44px; */
+  text-align: right;
+  padding-right: 5px;
+}
+nav .NavBtn{
+  display: inline-block;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+@media screen and (max-width: 410px) {
+  nav .NavBtn {
+    padding: 1px;
+  }
+}
+nav .NavBtn a{
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+nav .NavBtn a:hover{
+  color: rgb(255, 103, 48);
+  text-decoration: none;
+}
+nav .NavBtn a{
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+.logoutBtn{
+  color: rgb(73, 73, 73);
+}
+.logoutBtn p{
+  display: inline;
+  font-weight: 600;
+  font-size: 15px;
+}
+.logoutBtn .aLogout{
+  color: red;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 20px;
+}
+/* .logoutBox{
+  text-align: right;
+} */
+
+/* nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 3px;
+  transition: 0.3s ease all;
+}
+nav ul li a:hover {
+  background: #444;
+} */
+.App-footer{
+  height: 300px;
+}
+.footer_description{
+  position: relative;
+  text-align: center;
+  bottom: -50%;
+}
+
+.DatePick{
+  /* width: 100%; */
+  width: 540px;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+.DatePickBox{
+  margin: 0 auto;
+  float: right;
+  /* position: absolute; */
+}
+.DatePickBox .DateFrom{
+  display: inline-block;
+  margin: 2px;
+  /* position: fixed; */
+  /* left: 35%; */
+}
+.DatePickBox .BetweenDate{
+  text-align: center;
+  /* left: 50%; */
+}
+.DatePickBox .DateTo{
+  display: inline-block;
+  margin: 2px;
+  /* left: 51%; */
+}
+.DatePickBox .setRangeDateBtn{
+  margin-left: 4px; 
+}
+
+.ag-theme-balham-dark{
+  margin: 20px auto;
+}
+.ag-theme-balham-dark .ag-header{
+  height: 40px;
+}
+.ag-theme-balham-dark .ag-cell{
+  line-height: 38px !important;
+}
+
+.searchBox{
+  line-height: 42px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2mm solid white;
+  border-radius: 10px;
+}
+.searchBox .KeywordSearch{
+  line-height: 30px;
+  float: left;
+  margin-left: 100px;
+}
+.searchBox .DDsearchBox{
+  float: right;
+  /* margin-right: 130px; */
+  height: 35px;
+  margin: 0.2em 130px 0.2em 0;
+}
+.searchBox .BetweenSearch{
+  vertical-align: middle;
+  color: #10749a;
+}
+.searchBox .SearchInput{
+  height: 35px;
+  margin: 0.2em;
+}
+
+.SearchBtn{
+  width: 80px;
+  background: rgb(255, 103, 48);
+  border: 3px solid rgb(255, 103, 48);
+  color: white;
+  border-radius: 5px;
+  /* height: 34px;
+  margin: 0.5em; */
+}
+
+.ChartBox{
+  margin-top: 50px;
+}
+
+.textLoading{
+  margin-top: 25%;
+}
+
+.StockName{
+  color: rgb(250, 131, 20);
+}
+
+.ErrorMsg{
+  font-weight: 700;
+  font-size: large;
+  color: red;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
