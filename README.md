@@ -1,7 +1,12 @@
 # Stocks
 ## Watch Stocks
 Welcome.
-This is toy project for a website(http://localhost:3000) that is working by React and containing static pages.
+This is a toy project for a website(http://localhost:3000) that is working by React and containing static pages.
+
+How to launch
+1. npm install
+2. npm start
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
