@@ -11,125 +11,125 @@ export default function Home({location, history, match}) {
   const [rowData, setRowData] = useState([]);
   const [search, setSearch] = useState('');
   const [ddsearch, setddSearch] = useState('');
-  const {loading, error} = useStocks(search);
-  console.log(search);
-  let tableSection;
-  const columns = [
-    { headerName: "Name", field: "name", sortable: true, filter: "agTextColumnFilter" },
-    { headerName: "Symbol", field: "symbol", sortable: true, filter: "agTextColumnFilter" },
-    { headerName: "Industry", field: "industry", sortable: true, filter: "agTextColumnFilter" }
-  ]; 
+  // const {loading, error} = useStocks(search);
+  // console.log(search);
+  // let tableSection;
+  // const columns = [
+  //   { headerName: "Name", field: "name", sortable: true, filter: "agTextColumnFilter" },
+  //   { headerName: "Symbol", field: "symbol", sortable: true, filter: "agTextColumnFilter" },
+  //   { headerName: "Industry", field: "industry", sortable: true, filter: "agTextColumnFilter" }
+  // ]; 
 
-  function useStocks(searchWord){
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const query = qs.parse(location.search, {
-      ignoreQueryPrefix: true
-    });
-    // If there is no keyword to search from the form
-    if (searchWord === '' || searchWord === undefined){
-      searchWord = query.industry;
-    }
+  // function useStocks(searchWord){
+  //   const [loading, setLoading] = useState(true);
+  //   const [error, setError] = useState(false);
+  //   const query = qs.parse(location.search, {
+  //     ignoreQueryPrefix: true
+  //   });
+  //   // If there is no keyword to search from the form
+  //   if (searchWord === '' || searchWord === undefined){
+  //     searchWord = query.industry;
+  //   }
     
-    useEffect(() => {
-      let url = apiURL+`/stocks/symbols`;
-      if (searchWord !== '' && searchWord !== undefined){
-        // setSearch(searchWord);
-        url = apiURL+`/stocks/symbols?industry=`+searchWord;
-      }
-      console.log(url);
-      axios.get(url)
-        .then(res => {
-          console.log(res);
-          return res.data;
-        })
-        .then(stocks => {
-          // console.log(stocks);
-          setRowData(stocks);
-          setLoading(false);
-          setError(false);
-        })
-        .catch(error => {
-          console.log(error);
-          console.log(error.response);
-          setLoading(false);
-          setError(error.response.data.message);
-        })
+  //   useEffect(() => {
+  //     let url = apiURL+`/stocks/symbols`;
+  //     if (searchWord !== '' && searchWord !== undefined){
+  //       // setSearch(searchWord);
+  //       url = apiURL+`/stocks/symbols?industry=`+searchWord;
+  //     }
+  //     console.log(url);
+  //     axios.get(url)
+  //       .then(res => {
+  //         console.log(res);
+  //         return res.data;
+  //       })
+  //       .then(stocks => {
+  //         // console.log(stocks);
+  //         setRowData(stocks);
+  //         setLoading(false);
+  //         setError(false);
+  //       })
+  //       .catch(error => {
+  //         console.log(error);
+  //         console.log(error.response);
+  //         setLoading(false);
+  //         setError(error.response.data.message);
+  //       })
       
-    }, [searchWord]); // execute only when the value of 'search' is changed after the first rendering
+  //   }, [searchWord]); // execute only when the value of 'search' is changed after the first rendering
 
-    return {
-      loading,
-      error
-    };
-  }
+  //   return {
+  //     loading,
+  //     error
+  //   };
+  // }
 
-  function LoadingTable(){
-    return (
-      <div className="textLoading">
-        <p>Loading...</p>
-      </div>
-    );
-  }
-  function ErrorTable(){
-    console.log('err '+error);
-    return (
-      <div className="container">
-        <p className="ErrorMsg">{error}</p>
-      </div>
-    );
-  }
-  function DrawTable(){
-    const gridoptions = {
-      resizable: true,
-      sortable: true,
-    }
-    function onGridReady(params) {
-      let gridApi = params.api;
-      this.gridColumnApi = params.columnApi;
-      gridApi.sizeColumnsToFit();
-    }
-    return (
-      <div
-        className="ag-theme-balham-dark"
-        style={{
-          width: "900px",
-          height: "880px",
-        }}
-      >
-        <AgGridReact 
-          columnDefs={columns}
-          rowData={rowData}
-          pagination={true}
-          paginationPageSize={20}
-          defaultColDef={gridoptions}
-          onGridReady={onGridReady}
-          headerHeight={40}
-          rowHeight={40}
-          // gridAutoHeight={true}
-          rowSelection='single'
-          onRowSelected={
-            params => {
-              const selectedRows = params.api.getSelectedRows();
+  // function LoadingTable(){
+  //   return (
+  //     <div className="textLoading">
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // }
+  // function ErrorTable(){
+  //   console.log('err '+error);
+  //   return (
+  //     <div className="container">
+  //       <p className="ErrorMsg">{error}</p>
+  //     </div>
+  //   );
+  // }
+  // function DrawTable(){
+  //   const gridoptions = {
+  //     resizable: true,
+  //     sortable: true,
+  //   }
+  //   function onGridReady(params) {
+  //     let gridApi = params.api;
+  //     this.gridColumnApi = params.columnApi;
+  //     gridApi.sizeColumnsToFit();
+  //   }
+  //   return (
+  //     <div
+  //       className="ag-theme-balham-dark"
+  //       style={{
+  //         width: "900px",
+  //         height: "880px",
+  //       }}
+  //     >
+  //       <AgGridReact 
+  //         columnDefs={columns}
+  //         rowData={rowData}
+  //         pagination={true}
+  //         paginationPageSize={20}
+  //         defaultColDef={gridoptions}
+  //         onGridReady={onGridReady}
+  //         headerHeight={40}
+  //         rowHeight={40}
+  //         // gridAutoHeight={true}
+  //         rowSelection='single'
+  //         onRowSelected={
+  //           params => {
+  //             const selectedRows = params.api.getSelectedRows();
 
-              history.push('/stocks/'+selectedRows[0].symbol);
-            }
-          }
-        />
-      </div>
-    );
-  }
+  //             history.push('/stocks/'+selectedRows[0].symbol);
+  //           }
+  //         }
+  //       />
+  //     </div>
+  //   );
+  // }
 
-  if (loading){
-    tableSection = <LoadingTable />;
+  // if (loading){
+  //   tableSection = <LoadingTable />;
     
-  } else if (error){
-    tableSection = <ErrorTable />;
-  }
-    else {
-    tableSection = <DrawTable />;
-    // tableSection = <span></span>;
-  }
+  // } else if (error){
+  //   tableSection = <ErrorTable />;
+  // }
+  //   else {
+  //   tableSection = <DrawTable />;
+  //   // tableSection = <span></span>;
+  // }
   
   return (
     <main>
@@ -156,7 +156,7 @@ export default function Home({location, history, match}) {
           <option value="Telecommunication Services">Telecommunication Services</option>
         </select>
       </div>
-      {tableSection}
+      {/* {tableSection} */}
       
     </main>
   );
