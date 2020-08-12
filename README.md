@@ -1,7 +1,7 @@
-# Hij
-## Hij playground
+# Stocks
+## Watch Stocks
 Welcome.
-This is a website [Hij playground] that is working by React and containing static pages.
+This is toy project for a website(http://localhost:3000) that is working by React and containing static pages.
 
 ---------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
